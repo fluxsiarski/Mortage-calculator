@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+</head>
+
+<body>
+
+
+  <div class="app-container">
+
+    <div class="calculator">
+
+      <div class="calculator-top">
+        <h2>Mortgage Calculator</h2>
+        <p id="clear-all-fields">Clear all</p>
+      </div>
+
+
+      <div class="number-fields">
+
+        <div>
+          <label for="currency-input">Mortage Amount</label>
+          <div class="input-container" id="input-container-currency">
+            <span id="currency-symbol" class="currency-symbol">£</span>
+            <input type="number" id="currency-input-amount" class="currency-input" min="0" inputmode="numeric"
+              pattern="[0-9]*">
+          </div>
+          <span class="errorMsg" id="errorMsgCurrency"></span>
+
+          <!-- <span class="errorMsg" id="errorMsg"></span> -->
+        </div>
+
+
+        <div class="two-col row">
+          <div>
+            <label for="currency-input">Mortage Term</label>
+            <div class="input-container" id="input-container-years">
+              <input type="number" id="years-input" class="currency-input" min="0" inputmode="numeric" pattern="[0-9]*">
+              <span class="currency-symbol" id="years-symbol">years</span>
+            </div>
+            <span class="errorMsg" id="errorMsgYears"></span>
+
+            <!-- <span class="errorMsg" id="errorMsg"></span> -->
+          </div>
+
+
+          <div>
+            <label for="currency-input">Interest Rate</label>
+            <div class="input-container" id="input-container-percent">
+              <input type="number" id="interest-input" class="currency-input" min="0" step="0.5" inputmode="numeric"
+                pattern="[0-9]*">
+              <span class="currency-symbol" id="percent-symbol">%</span>
+            </div>
+            <span class="errorMsg" id="errorMsgInterest"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="radio-checkboxes">
+        <label for="currency-input">Mortage type</label>
+
+        <div class="radio-button">
+          <input type="radio" id="repayment" name="query_type" value="enquiry">
+          <label for="repayment">Repayment</label>
+        </div>
+
+        <div class="radio-button">
+          <input type="radio" id="interest" name="query_type" value="enquiry">
+          <label for="interest">Interest Only</label>
+        </div>
+        <span class="errorMsg" id="errorMsgRadio"></span>
+      </div>
+
+      <div class="calculate-button">
+        <img src="assets/images/icon-calculator.svg">
+        <p>Calculate Repayments</p>
+      </div>
+
+    </div>
+
+
+    <div class="results-before-calculations visible-calculations">
+      <img src="assets/images/illustration-empty.svg" width="200" height="200">
+      <h2>Results shown here</h2>
+      <p>Complete the form and click “calculate repayments” to see what
+        your monthly repayments would be.</p>
+    </div>
+
+    <div class="results-after-calculations hidden">
+
+      <div class="results-text">
+        <h2>Your results</h2>
+        <p>Complete the form and click “calculate repayments” to see what
+          your monthly repayments would be.</p>
+      </div>
+
+
+      <div class="results-box">
+        <div class="results-highlight"></div>
+        <div class="results-content">
+          <p>Your monthly repayments</p>
+          <p class="amount" id="monthly-repayment"></p>
+          <hr>
+          <p>Total you'll repay over the term</p>
+          <p class="total-amount" id="total-repayment"></p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <script src="script/script.js"></script>
+</body>
+
+</html>
+
+
+
+
+<!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
